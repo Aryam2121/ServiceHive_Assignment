@@ -11,7 +11,7 @@ function SocketClient() {
   useEffect(() => {
     if (user) {
       // Connect to socket server
-      socket = io('http://localhost:5000', {
+      socket = io(import.meta.env.VITE_API_URL || 'http://localhost:5000', {
         withCredentials: true
       });
 
